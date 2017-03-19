@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rm -f config.cache aclocal.m4
+[ -d m4 ] || mkdir m4
+autoreconf -i -I ./m4 -I ./scripts
