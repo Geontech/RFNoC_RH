@@ -11,8 +11,8 @@
 #include <omniORB4/omniORB.h>
 #include <uhd/device3.hpp>
 
-#include "RFNoC_Persona.h"
-#include "RFNoC_Utils.h"
+#include <RFNoC_Persona.h>
+#include <RFNoC_Utils.h>
 
 typedef boost::function<BlockInfo(const CORBA::ULong &portHash)> getBlockInfoFromHashCallback;
 

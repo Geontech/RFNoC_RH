@@ -8,8 +8,8 @@
 #include <string>
 #include <vector>
 
-#include "RFNoC_Persona.h"
-#include "RFNoC_Utils.h"
+#include <RFNoC_Persona.h>
+#include <RFNoC_Utils.h>
 
 /*
  * A callback on the component to be called by the persona. This lets the

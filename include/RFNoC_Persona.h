@@ -4,8 +4,8 @@
 #include <boost/function.hpp>
 #include <omniORB4/CORBA.h>
 
-#include "RFNoC_Programmable.h"
-#include "RFNoC_Utils.h"
+#include <RFNoC_Programmable.h>
+#include <RFNoC_Utils.h>
 
 class RFNoC_Programmable;
 
