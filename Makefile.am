@@ -7,6 +7,12 @@ AUTOMAKE_OPTIONS = subdir-objects
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = RFNoC_RH.pc
 
+include_HEADERS = \
+	include/RFNoC_Component.h \
+	include/RFNoC_Persona.h \
+	include/RFNoC_Programmable.h \
+	include/RFNoC_Utils.h
+
 distclean-local:
 	rm -rf autom4te.cache
 	rm -rf m4
@@ -29,9 +35,6 @@ distclean-local:
 
 lib_LTLIBRARIES = libRFNoC_RH.la
 libRFNoC_RH_la_SOURCES = \
-	src/RFNoC_Component.h \
-	src/RFNoC_Persona.h \
-	src/RFNoC_Programmable.h \
 	src/RFNoC_Utils.cpp
 libRFNoC_RH_la_CXXFLAGS = -Wall $(PROJECTDEPS_CFLAGS) $(LIBUHD_CFLAGS) -Iinclude
 libRFNoC_RH_la_LDFLAGS = -Wall $(PROJECTDEPS_LIBS) $(LIBUHD_LIBS)
