@@ -1,0 +1,11 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: RFNoC_RH
+Description:
+Requires: 
+Version: 1.0.0
+Libs: -L${libdir} -lRFNoC_RH
+Cflags: -I${includedir}

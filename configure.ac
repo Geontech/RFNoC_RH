@@ -16,5 +16,5 @@ m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 PKG_CHECK_MODULES([PROJECTDEPS], [ossie >= 2.0, omniORB4 >= 4.1.0])
 PKG_CHECK_MODULES([LIBUHD], [uhd >= 3.5.3])
 
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile RFNoC_RH.pc])
 AC_OUTPUT

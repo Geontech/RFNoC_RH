@@ -4,6 +4,9 @@ libdir=$(prefix)/lib/
 ACLOCAL_AMFLAGS = -I m4 -I${OSSIEHOME}/share/aclocal/ossie
 AUTOMAKE_OPTIONS = subdir-objects
 
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = RFNoC_RH.pc
+
 distclean-local:
 	rm -rf autom4te.cache
 	rm -rf m4
