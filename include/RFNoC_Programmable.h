@@ -18,6 +18,8 @@ typedef boost::function<BlockInfo(const CORBA::ULong &portHash)> getBlockInfoFro
 
 typedef boost::function<void(const std::string &deviceID, getBlockInfoFromHashCallback getBlockFromHashCb)> setGetBlockInfoFromHashCallback;
 
+class RFNoC_Persona;
+
 class RFNoC_Programmable
 {
     public:
