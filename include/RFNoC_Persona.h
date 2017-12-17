@@ -15,6 +15,7 @@ class RFNoC_Persona
         RFNoC_Persona() : programmable(NULL) {};
         virtual ~RFNoC_Persona() {};
 
+        virtual BlockInfo getBlockInfoFromHash(const CORBA::ULong &portHash) = 0;
         virtual void setProgrammable(RFNoC_Programmable *programmable) { this->programmable = programmable; };
 
     protected:
