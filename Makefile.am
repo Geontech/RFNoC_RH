@@ -30,5 +30,5 @@ libRFNoC_RH_la_SOURCES = \
 	src/RFNoC_Persona.h \
 	src/RFNoC_Programmable.h \
 	src/RFNoC_Utils.cpp
-libRFNoC_RH_la_CXXFLAGS = -Wall $(PROJECTDEPS_CFLAGS) $(LIBUHD_CFLAGS) -I../include
+libRFNoC_RH_la_CXXFLAGS = -Wall $(PROJECTDEPS_CFLAGS) $(LIBUHD_CFLAGS) -Iinclude
 libRFNoC_RH_la_LDFLAGS = -Wall $(PROJECTDEPS_LIBS) $(LIBUHD_LIBS)
