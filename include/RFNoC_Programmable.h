@@ -27,7 +27,10 @@ class RFNoC_Programmable
         virtual bool connectRadioRX(const CORBA::ULong &portHash, const BlockInfo &blockInfo) = 0;
         virtual bool connectRadioTX(const std::string &allocationId, const BlockInfo &blockInfo) = 0;
         virtual uhd::device3::sptr getUsrp() = 0;
-        virtual void setGetBlockInfoFromHashCb(const std::string &resourceId, getBlockInfoFromHashCallback getBlockInfoFromHashCb) = 0;
+        virtual void setPersonaMapping(const std::string &deviceId, RFNoC_Persona *persona) = 0;
+
+    protected:
+        std::map<std::string, RFNoC_Persona *> deviceIdToPersona;
 };
 
 #endif /* RFNOC_PROGRAMMABLE_H_ */
