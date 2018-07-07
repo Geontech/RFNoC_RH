@@ -26,8 +26,8 @@ distclean-local:
 # you wish to manually control these options.
 include $(srcdir)/Makefile.am.ide
 libRFNoC_RH_la_SOURCES = $(redhawk_SOURCES_auto)
-libRFNoC_RH_la_LIBADD = $(SOFTPKG_LIBS) $(REDHAWK_LIBS)
-libRFNoC_RH_la_CPPFLAGS = -I $(srcdir)/include $(SOFTPKG_CFLAGS) $(REDHAWK_CFLAGS) $(BOOST_CPPFLAGS)
+libRFNoC_RH_la_LIBADD = $(SOFTPKG_LIBS) $(REDHAWK_LIBS) $(UHD_LIBS)
+libRFNoC_RH_la_CPPFLAGS = -I $(srcdir)/include $(SOFTPKG_CFLAGS) $(UHD_CFLAGS) $(REDHAWK_CFLAGS) $(BOOST_CPPFLAGS)
 libRFNoC_RH_la_CXXFLAGS = -Wall
 
 redhawk_HEADERS_auto ?= $(filter include/%,$(redhawk_SOURCES_auto))
