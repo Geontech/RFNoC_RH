@@ -10,7 +10,7 @@
 #include <ossie/debug.h>
 #include <ossie/ThreadedComponent.h>
 
-namespace RFNoC_Utils
+namespace RFNoC_RH
 {
 	/*
 	 * A class for creating a service function thread

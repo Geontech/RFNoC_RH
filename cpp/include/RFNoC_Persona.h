@@ -11,7 +11,7 @@
 #include "RFNoC_Programmable.h"
 #include "RFNoC_Utils.h"
 
-namespace RFNoC_Utils
+namespace RFNoC_RH
 {
 	// Forward Declaration(s)
 	class RFNoC_Programmable;
@@ -26,10 +26,13 @@ namespace RFNoC_Utils
 
 		// Public Method(s)
 		public:
+			virtual bool connectBlocks(const BlockDescriptor &outputDescriptor, const BlockDescriptor &inputDescriptor) = 0;
+
 			/*
-			 * This method should return an RF-NoC block to the caller.
+			 * This method should return an RF-NoC block to the caller. If the port was unset by the
+			 * caller, the port used will be placed into blockDescriptor.
 			 */
-			virtual void getBlock(const BlockDescriptor &blockDescriptor) = 0;
+			virtual uhd::rfnoc::block_ctrl_base::sptr getBlock(BlockDescriptor &blockDescriptor) = 0;
 
 			/*
 			 * This method should return the block descriptor corresponding to the
@@ -37,9 +40,13 @@ namespace RFNoC_Utils
 			 */
 			virtual BlockDescriptor getBlockDescriptorFromHash(PortHashType portHash) = 0;
 
-			virtual void incomingConnectionAdded(const std::string &resourceId, PortHashType portHash) = 0;
+			virtual void incomingConnectionAdded(const std::string &resourceId,
+												 const std::string &streamId,
+												 PortHashType portHash) = 0;
 
-			virtual void incomingConnectionRemoved(const std::string &resourceId, PortHashType portHash) = 0;
+			virtual void incomingConnectionRemoved(const std::string &resourceId,
+												   const std::string &streamId,
+												   PortHashType portHash) = 0;
 
 			virtual void outgoingConnectionAdded(const std::string &resourceId,
 												 const std::string &connectionId,
@@ -50,6 +57,10 @@ namespace RFNoC_Utils
 												   PortHashType portHash) = 0;
 
 			virtual void setProgrammable(RFNoC_Programmable *programmable) { this->programmable = programmable; }
+
+			virtual void setRxStreamDescriptor(const std::string &resourceId, const StreamDescriptor &streamDescriptor) = 0;
+
+			virtual void setTxStreamDescriptor(const std::string &resourceId, const StreamDescriptor &streamDescriptor) = 0;
 
 		// Protected Member(s)
 		protected:

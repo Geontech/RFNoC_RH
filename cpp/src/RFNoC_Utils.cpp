@@ -9,8 +9,16 @@
 #include <uhd/rfnoc/sink_block_ctrl_base.hpp>
 #include <uhd/rfnoc/source_block_ctrl_base.hpp>
 
-namespace RFNoC_Utils
+namespace RFNoC_RH
 {
+	/*
+	 * Block Descriptor Constructor(s) and/or Destructor
+	 */
+	BlockDescriptor::BlockDescriptor() :
+			port(uhd::rfnoc::ANY_PORT)
+	{
+	}
+
 	/*
 	 * Block Descriptor Public Method(s)
 	 */

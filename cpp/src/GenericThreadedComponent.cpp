@@ -4,7 +4,7 @@
 // Boost Include(s)
 #include <boost/make_shared.hpp>
 
-namespace RFNoC_Utils
+namespace RFNoC_RH
 {
 	PREPARE_LOGGING(GenericThreadedComponent)
 

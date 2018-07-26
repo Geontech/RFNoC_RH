@@ -10,7 +10,7 @@
 // UHD Include(s)
 #include <uhd/device3.hpp>
 
-namespace RFNoC_Utils
+namespace RFNoC_RH
 {
 	// Type Definition(s)
 	typedef CORBA::ULong PortHashType;
@@ -25,6 +25,10 @@ namespace RFNoC_Utils
 	 */
 	struct BlockDescriptor
 	{
+		// Constructor(s) and/or Destructor
+		public:
+			BlockDescriptor();
+
 		// Public Method(s)
 		public:
 			bool operator==(const BlockDescriptor &rhs);
@@ -33,6 +37,18 @@ namespace RFNoC_Utils
 		public:
 			uhd::rfnoc::block_id_t blockId;
 			size_t port;
+	};
+
+	/*
+	 * A structure describing a data stream
+	 */
+	struct StreamDescriptor
+	{
+		// Public Member(s)
+		public:
+			std::string cpuFormat;
+			std::string otwFormat;
+			uhd::device_addr_t streamArgs;
 	};
 
 	// Helper Function(s)

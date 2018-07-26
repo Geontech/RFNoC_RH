@@ -12,7 +12,7 @@
 #include "RFNoC_Persona.h"
 #include "RFNoC_Utils.h"
 
-namespace RFNoC_Utils
+namespace RFNoC_RH
 {
 	// Forward Declaration(s)
 	class RFNoC_Persona;

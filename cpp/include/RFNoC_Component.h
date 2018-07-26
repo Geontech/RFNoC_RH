@@ -4,10 +4,13 @@
 // Linux Include(s)
 #include <stddef.h>
 
+// UHD Include(s)
+#include <uhd/stream.hpp>
+
 // Local Include(s)
 #include "RFNoC_Persona.h"
 
-namespace RFNoC_Utils
+namespace RFNoC_RH
 {
 	// Forward Declaration(s)
 	class RFNoC_Persona;
@@ -24,19 +27,21 @@ namespace RFNoC_Utils
 			virtual ~RFNoC_Component() {}
 
 		public:
+			virtual void setPersona(RFNoC_Persona *persona) { this->persona = persona; }
+
 			/*
 			 * This method should enable streaming from the component's last/only
 			 * RF-NoC block. This includes converting the data to bulkio and
 			 * creating appropriate SRI.
 			 */
-			virtual void setRxStreamer(bool enable) = 0;
+			virtual void setRxStreamer(uhd::rx_streamer::sptr rxStreamer) = 0;
 
 			/*
 			 * This method should enable streaming to the component's first/only
 			 * RF-NoC block. This includes converting the bulkio data to the
 			 * appropriate format for the block and responding to the upstream SRI.
 			 */
-			virtual void setTxStreamer(bool enable) = 0;
+			virtual void setTxStreamer(uhd::tx_streamer::sptr txStreamer) = 0;
 
 		protected:
 			RFNoC_Persona *persona;
