@@ -1,0 +1,8 @@
+8bfcd22353c3a57fee561ad86ee2a56b  reconf
+de4d0d481c5563f314ef75dd64097098  include/RFNoC_RH.h
+15b4a444e304feca8c06a6f321c02438  RFNoC_RH.pc.in
+3641ff5209f1ca34aae48cf3817ad38a  configure.ac
+7d49b40bbb6e9e90d92a450f159a52af  Makefile.am
+e9293da5dad087316f3df6ab003b21e1  Makefile.am.ide
+2b2faa5cfc83438427491f4be5d6ee59  build.sh
+c550c4a547280724f21c510974520cce  src/RFNoC_RH.cpp
