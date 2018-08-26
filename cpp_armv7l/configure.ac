@@ -9,12 +9,11 @@ LT_INIT([disable-static])
 
 AC_CORBA_ORB
 OSSIE_CHECK_OSSIE
-RH_SOFTPKG_PREFIX([RFNoC_RH],[cpp])
+RH_SOFTPKG_PREFIX([RFNoC_RH],[cpp_armv7l])
 
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
 # Dependencies
-PKG_CONFIG_PATH=/usr/local/lib:/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH
 PKG_CHECK_MODULES([REDHAWK], [ossie >= 2.0])
 PKG_CHECK_MODULES([UHD], [uhd >= 3.11.1])
 OSSIE_ENABLE_LOG4CXX
