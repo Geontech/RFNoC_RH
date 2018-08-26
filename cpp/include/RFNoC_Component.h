@@ -4,6 +4,9 @@
 // Linux Include(s)
 #include <stddef.h>
 
+// OSSIE Include(s)
+#include <ossie/Resource_impl.h>
+
 // UHD Include(s)
 #include <uhd/stream.hpp>
 
@@ -14,6 +17,9 @@ namespace RFNoC_RH
 {
 	// Forward Declaration(s)
 	class RFNoC_Persona;
+
+	// Type Definition(s)
+	typedef Resource_impl* (*RFNoC_Component_Constructor_Ptr)(int, char*[], RFNoC_Persona *persona);
 
 	/*
 	 * An abstract base class to be implemented by an RF-NoC component designer.

@@ -5,7 +5,7 @@ includedir=@includedir@
 
 Name: RFNoC_RH
 Description:
-Requires: uhd >= 4.0.0
+Requires: uhd >= 3.11.1
 Version: 1.0.0
 Libs: -L${libdir} -lRFNoC_RH
 Cflags: -I${includedir}
